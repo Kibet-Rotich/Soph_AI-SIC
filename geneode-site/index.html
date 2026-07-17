@@ -1,0 +1,679 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Geneode | AI Bioinformatics Workstation</title>
+  <meta name="description" content="Geneode — Unified AI-assisted bioinformatics workstation for sequence analysis, biological databases, interpretation, visualization, and reporting." />
+  <meta property="og:title" content="Geneode | AI Bioinformatics Workstation" />
+  <meta property="og:description" content="A unified research environment for modern bioinformatics workflows." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#090B0C" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- BACKGROUND LAYER -->
+  <div class="bg-surface" aria-hidden="true"></div>
+  <div class="bg-noise" aria-hidden="true"></div>
+  <div class="bg-grid-lab" aria-hidden="true"></div>
+  <div class="bg-vignette" aria-hidden="true"></div>
+
+  <!-- BOOT PANEL -->
+  <div class="boot-panel" id="bootPanel" aria-hidden="true">
+    <div class="boot-content">
+      <div class="boot-line">
+        <span class="boot-cursor">▌</span>
+        <span>GENEODE BIOINFORMATICS WORKSTATION v3.2</span>
+      </div>
+      <div class="boot-line"><span class="boot-dim">[</span><span class="boot-ok">OK</span><span class="boot-dim">]</span> Power-on self test .................... PASS</div>
+      <div class="boot-line"><span class="boot-dim">[</span><span class="boot-ok">OK</span><span class="boot-dim">]</span> AI Inference Engine .................. ONLINE</div>
+      <div class="boot-line"><span class="boot-dim">[</span><span class="boot-ok">OK</span><span class="boot-dim">]</span> NCBI Connector ....................... CONNECTED</div>
+      <div class="boot-line"><span class="boot-dim">[</span><span class="boot-ok">OK</span><span class="boot-dim">]</span> BLAST Pipeline ....................... READY</div>
+      <div class="boot-line"><span class="boot-dim">[</span><span class="boot-ok">OK</span><span class="boot-dim">]</span> Knowledge Graph ...................... ACTIVE</div>
+      <div class="boot-line"><span class="boot-dim">[</span><span class="boot-ok">OK</span><span class="boot-dim">]</span> System Initialized</div>
+      <div class="boot-line boot-final"><span class="boot-cursor">▌</span><span>READY FOR RESEARCH</span></div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION DASHBOARD -->
+  <header class="nav-dashboard" id="top">
+    <div class="nav-enclosure">
+      <a class="nav-brand" href="#top" aria-label="Geneode Home">
+        <img class="nav-logo" src="images/logo_black.png" alt="Geneode" />
+        <div class="nav-brand-text">
+          <span class="nav-brand-name">GENEODE</span>
+          <span class="nav-brand-sub">BIOINFORMATICS WORKSTATION</span>
+        </div>
+      </a>
+
+      <div class="nav-separator" aria-hidden="true"></div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mainNav">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <nav id="mainNav" class="nav-links" aria-label="Primary">
+        <a href="#mission" class="nav-link"><span class="nav-link-num">01</span>Mission</a>
+        <a href="#platform" class="nav-link"><span class="nav-link-num">02</span>Platform</a>
+        <a href="#pipeline" class="nav-link"><span class="nav-link-num">03</span>Pipeline</a>
+        <a href="#dashboard" class="nav-link"><span class="nav-link-num">04</span>Dashboard</a>
+        <a href="#infrastructure" class="nav-link"><span class="nav-link-num">05</span>Infrastructure</a>
+        <a href="#ai-core" class="nav-link"><span class="nav-link-num">06</span>AI Core</a>
+        <a href="#roadmap" class="nav-link"><span class="nav-link-num">07</span>Roadmap</a>
+      </nav>
+
+      <div class="nav-status">
+        <div class="status-led status-led--green" title="System Online"></div>
+        <span class="nav-status-label">SYS NOMINAL</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ========== SCIENTIFIC HERO CONSOLE ========== -->
+    <section class="hero-console section" id="hero">
+      <div class="container">
+        <div class="console-grid">
+
+          <!-- LEFT: Status panel -->
+          <div class="console-left reveal">
+            <div class="module-label">SYSTEM CONTROL PANEL — GEN-MK3</div>
+            <h1 class="console-heading">One intelligent workspace<br>for modern biological<br><span class="console-heading-accent">discovery.</span></h1>
+            <p class="console-lead">Geneode brings sequence analysis, scientific databases, AI interpretation, visualization, and publication-ready reporting into one integrated research environment.</p>
+
+            <div class="status-strip">
+              <div class="status-item">
+                <div class="status-led status-led--cyan pulse-led"></div><span>AI ENGINE — ONLINE</span>
+              </div>
+              <div class="status-item">
+                <div class="status-led status-led--green pulse-led"></div><span>NCBI — CONNECTED</span>
+              </div>
+              <div class="status-item">
+                <div class="status-led status-led--green pulse-led"></div><span>BLAST — READY</span>
+              </div>
+              <div class="status-item">
+                <div class="status-led status-led--amber pulse-led"></div><span>INFERENCE — ACTIVE</span>
+              </div>
+            </div>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#platform">
+                <span class="btn-icon">▶</span> INITIALIZE WORKSPACE
+              </a>
+              <a class="btn btn-secondary" href="#infrastructure">
+                <span class="btn-icon">◈</span> VIEW ARCHITECTURE
+              </a>
+            </div>
+            <p class="console-note">AI assists scientific work. Researchers remain responsible for scientific reasoning.</p>
+          </div>
+
+          <!-- RIGHT: DNA Visualization Console -->
+          <div class="console-right reveal" aria-hidden="true">
+            <div class="viz-housing">
+              <div class="viz-bezel">
+                <div class="viz-label-top">MOLECULAR VIEWPORT — LIVE</div>
+                <canvas id="dnaCanvas" class="dna-canvas"></canvas>
+                <div class="viz-overlay">
+                  <div class="viz-data-row"><span>RESOLUTION</span><span>0.24 nm</span></div>
+                  <div class="viz-data-row"><span>MAGNIFICATION</span><span>×12,400</span></div>
+                  <div class="viz-data-row"><span>RENDER MODE</span><span>SURFACE</span></div>
+                </div>
+                <div class="viz-led-row">
+                  <div class="status-led status-led--green"></div>
+                  <div class="status-led status-led--cyan"></div>
+                  <div class="status-led status-led--amber"></div>
+                  <span class="viz-led-label">RENDER ENGINE ACTIVE</span>
+                </div>
+              </div>
+              <div class="housing-screws" aria-hidden="true">
+                <span class="screw"></span><span class="screw"></span><span class="screw"></span><span class="screw"></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== MISSION OVERVIEW ========== -->
+    <section class="section module-section" id="mission">
+      <div class="container narrow reveal">
+        <div class="module-label">MISSION OVERVIEW — 01</div>
+        <h2>Bioinformatics workflows are fragmented by default.</h2>
+        <p class="section-desc">Researchers repeatedly switch between tools like BLAST, NCBI, UniProt, KEGG, PDB, Ensembl, Primer3, and literature databases. This context switching consumes time, increases cognitive load, and creates avoidable points of error.</p>
+
+        <div class="metrics-panel">
+          <article class="metric-module">
+            <div class="module-head">
+              <span class="module-num">M1</span>
+              <div class="status-led status-led--amber"></div>
+            </div>
+            <h3>TOO MANY TOOLS</h3>
+            <div class="metric-bar" style="--fill:78%"></div>
+            <p>Workflows split across disconnected interfaces and data formats.</p>
+          </article>
+          <article class="metric-module">
+            <div class="module-head">
+              <span class="module-num">M2</span>
+              <div class="status-led status-led--red pulse-led"></div>
+            </div>
+            <h3>EXCESSIVE FRICTION</h3>
+            <div class="metric-bar" style="--fill:85%"></div>
+            <p>Manual transfer steps reduce focus on scientific interpretation.</p>
+          </article>
+          <article class="metric-module">
+            <div class="module-head">
+              <span class="module-num">M3</span>
+              <div class="status-led status-led--amber"></div>
+            </div>
+            <h3>STEEP OVERHEAD</h3>
+            <div class="metric-bar" style="--fill:64%"></div>
+            <p>Beginners face steep barriers before meaningful analysis begins.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PLATFORM MODULES ========== -->
+    <section class="section module-section" id="platform">
+      <div class="container reveal">
+        <div class="module-label">PLATFORM MODULES — 02</div>
+        <h2>Geneode orchestrates trusted infrastructure into one flow.</h2>
+
+        <div class="module-grid">
+          <article class="inst-module">
+            <img class="inst-module-img" src="images/googledeepmind-25626515.jpg" alt="Sequence analysis" loading="lazy" />
+            <div class="inst-module-body">
+              <div class="module-head">
+                <span class="module-num">A1</span>
+                <div class="status-led status-led--cyan"></div>
+              </div>
+              <h3>SEQUENCE ANALYSIS</h3>
+              <p>Upload biological sequences and run computational analysis with guided controls.</p>
+            </div>
+          </article>
+          <article class="inst-module">
+            <img class="inst-module-img" src="images/lab equipment.jpg" alt="Data retrieval" loading="lazy" />
+            <div class="inst-module-body">
+              <div class="module-head">
+                <span class="module-num">A2</span>
+                <div class="status-led status-led--cyan"></div>
+              </div>
+              <h3>BIOLOGICAL RETRIEVAL</h3>
+              <p>Pull structured annotations, pathways, structures, and references from core resources.</p>
+            </div>
+          </article>
+          <article class="inst-module">
+            <img class="inst-module-img" src="images/protein_structure.jpg" alt="AI interpretation" loading="lazy" />
+            <div class="inst-module-body">
+              <div class="module-head">
+                <span class="module-num">A3</span>
+                <div class="status-led status-led--green"></div>
+              </div>
+              <h3>AI INTERPRETATION</h3>
+              <p>Receive context-aware explanations that support, not replace, scientific judgment.</p>
+            </div>
+          </article>
+          <article class="inst-module">
+            <img class="inst-module-img" src="images/protein_structure.jpg" alt="Visualization" loading="lazy" />
+            <div class="inst-module-body">
+              <div class="module-head">
+                <span class="module-num">A4</span>
+                <div class="status-led status-led--cyan"></div>
+              </div>
+              <h3>VISUAL EXPLORATION</h3>
+              <p>Understand outputs through pathway, structure, and sequence-focused views.</p>
+            </div>
+          </article>
+          <article class="inst-module">
+            <img class="inst-module-img" src="images/googledeepmind-25626515.jpg" alt="Report generation" loading="lazy" />
+            <div class="inst-module-body">
+              <div class="module-head">
+                <span class="module-num">A5</span>
+                <div class="status-led status-led--green"></div>
+              </div>
+              <h3>REPORT GENERATION</h3>
+              <p>Convert analysis outcomes into publication-ready summaries and exports.</p>
+            </div>
+          </article>
+          <article class="inst-module">
+            <img class="inst-module-img" src="images/lab equipment.jpg" alt="Workspace" loading="lazy" />
+            <div class="inst-module-body">
+              <div class="module-head">
+                <span class="module-num">A6</span>
+                <div class="status-led status-led--cyan"></div>
+              </div>
+              <h3>UNIFIED WORKSPACE</h3>
+              <p>Stay in one environment from upload to interpretation and final delivery.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ANALYSIS PIPELINE ========== -->
+    <section class="section module-section" id="pipeline">
+      <div class="container reveal">
+        <div class="module-label">ANALYSIS PIPELINE — 03</div>
+        <h2>From raw sequence to scientific insight.</h2>
+
+        <div class="pipeline-rail">
+          <ol class="pipeline-steps">
+            <li class="pipe-step">
+              <div class="pipe-node">
+                <span class="pipe-num">01</span>
+                <div class="status-led status-led--green"></div>
+              </div>
+              <div class="pipe-content">
+                <h4>UPLOAD</h4>
+                <p>Upload biological sequence data in standard formats</p>
+              </div>
+            </li>
+            <li class="pipe-connector" aria-hidden="true"></li>
+            <li class="pipe-step">
+              <div class="pipe-node">
+                <span class="pipe-num">02</span>
+                <div class="status-led status-led--cyan"></div>
+              </div>
+              <div class="pipe-content">
+                <h4>ANALYZE</h4>
+                <p>Run computational analysis with configured parameters</p>
+              </div>
+            </li>
+            <li class="pipe-connector" aria-hidden="true"></li>
+            <li class="pipe-step">
+              <div class="pipe-node">
+                <span class="pipe-num">03</span>
+                <div class="status-led status-led--cyan"></div>
+              </div>
+              <div class="pipe-content">
+                <h4>RETRIEVE</h4>
+                <p>Retrieve multi-source annotations from trusted databases</p>
+              </div>
+            </li>
+            <li class="pipe-connector" aria-hidden="true"></li>
+            <li class="pipe-step">
+              <div class="pipe-node">
+                <span class="pipe-num">04</span>
+                <div class="status-led status-led--amber pulse-led"></div>
+              </div>
+              <div class="pipe-content">
+                <h4>INTERPRET</h4>
+                <p>Interpret findings with AI-assisted contextual analysis</p>
+              </div>
+            </li>
+            <li class="pipe-connector" aria-hidden="true"></li>
+            <li class="pipe-step">
+              <div class="pipe-node">
+                <span class="pipe-num">05</span>
+                <div class="status-led status-led--cyan"></div>
+              </div>
+              <div class="pipe-content">
+                <h4>VISUALIZE</h4>
+                <p>Visualize biological context across multiple views</p>
+              </div>
+            </li>
+            <li class="pipe-connector" aria-hidden="true"></li>
+            <li class="pipe-step">
+              <div class="pipe-node">
+                <span class="pipe-num">06</span>
+                <div class="status-led status-led--green"></div>
+              </div>
+              <div class="pipe-content">
+                <h4>EXPORT</h4>
+                <p>Export publication-ready summaries and reports</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== RESEARCH DASHBOARD ========== -->
+    <section class="section module-section" id="dashboard">
+      <div class="container reveal">
+        <div class="module-label">RESEARCH DASHBOARD — 04</div>
+        <h2>Built on trusted scientific resources.</h2>
+
+        <div class="dash-grid">
+          <article class="dash-module">
+            <div class="module-head">
+              <span class="module-num">DB1</span>
+              <div class="status-led status-led--green"></div>
+            </div>
+            <h3>NCBI</h3>
+            <p class="dash-stat">1.2M+ records</p>
+            <p>Reference sequence and gene records</p>
+          </article>
+          <article class="dash-module">
+            <div class="module-head">
+              <span class="module-num">DB2</span>
+              <div class="status-led status-led--green"></div>
+            </div>
+            <h3>BLAST</h3>
+            <p class="dash-stat">98.7% uptime</p>
+            <p>Similarity search and alignment matching</p>
+          </article>
+          <article class="dash-module">
+            <div class="module-head">
+              <span class="module-num">DB3</span>
+              <div class="status-led status-led--green"></div>
+            </div>
+            <h3>UniProt</h3>
+            <p class="dash-stat">570K+ curated</p>
+            <p>Protein function and curated annotation</p>
+          </article>
+          <article class="dash-module">
+            <div class="module-head">
+              <span class="module-num">DB4</span>
+              <div class="status-led status-led--cyan"></div>
+            </div>
+            <h3>KEGG</h3>
+            <p class="dash-stat">550+ pathways</p>
+            <p>Pathways and systems-level context</p>
+          </article>
+          <article class="dash-module">
+            <div class="module-head">
+              <span class="module-num">DB5</span>
+              <div class="status-led status-led--green"></div>
+            </div>
+            <h3>PDB</h3>
+            <p class="dash-stat">214K+ structures</p>
+            <p>Protein structure insights and references</p>
+          </article>
+          <article class="dash-module">
+            <div class="module-head">
+              <span class="module-num">DB6</span>
+              <div class="status-led status-led--cyan"></div>
+            </div>
+            <h3>Ensembl</h3>
+            <p class="dash-stat">300+ species</p>
+            <p>Genome annotation across organisms</p>
+          </article>
+          <article class="dash-module">
+            <div class="module-head">
+              <span class="module-num">DB7</span>
+              <div class="status-led status-led--amber"></div>
+            </div>
+            <h3>AlphaFold</h3>
+            <p class="dash-stat">200M+ predicted</p>
+            <p>Predicted structure context where relevant</p>
+          </article>
+          <article class="dash-module">
+            <div class="module-head">
+              <span class="module-num">DB8</span>
+              <div class="status-led status-led--green"></div>
+            </div>
+            <h3>Primer3</h3>
+            <p class="dash-stat">Design engine</p>
+            <p>Primer design support in workflow</p>
+          </article>
+          <article class="dash-module">
+            <div class="module-head">
+              <span class="module-num">DB9</span>
+              <div class="status-led status-led--cyan"></div>
+            </div>
+            <h3>Gene Ontology</h3>
+            <p class="dash-stat">47K+ terms</p>
+            <p>Functional terms and biological processes</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SCIENTIFIC INFRASTRUCTURE ========== -->
+    <section class="section module-section" id="infrastructure">
+      <div class="container reveal">
+        <div class="module-label">SYSTEM ARCHITECTURE — 05</div>
+        <h2>Transparent flow from data to reporting.</h2>
+
+        <div class="arch-rail">
+          <div class="arch-node">
+            <div class="arch-node-icon">◉</div>
+            <span>USER<br>INPUT</span>
+          </div>
+          <div class="arch-trace" aria-hidden="true"></div>
+          <div class="arch-node">
+            <div class="arch-node-icon">⇧</div>
+            <span>UPLOAD<br>ENGINE</span>
+          </div>
+          <div class="arch-trace" aria-hidden="true"></div>
+          <div class="arch-node">
+            <div class="arch-node-icon">⚙</div>
+            <span>PROCESSING<br>PIPELINE</span>
+          </div>
+          <div class="arch-trace" aria-hidden="true"></div>
+          <div class="arch-node">
+            <div class="arch-node-icon">◫</div>
+            <span>SCIENTIFIC<br>DATABASES</span>
+          </div>
+          <div class="arch-trace" aria-hidden="true"></div>
+          <div class="arch-node arch-node--active">
+            <div class="arch-node-icon">◈</div>
+            <span>AI<br>INTERPRETATION</span>
+          </div>
+          <div class="arch-trace" aria-hidden="true"></div>
+          <div class="arch-node">
+            <div class="arch-node-icon">◎</div>
+            <span>VISUALIZATION<br>ENGINE</span>
+          </div>
+          <div class="arch-trace" aria-hidden="true"></div>
+          <div class="arch-node">
+            <div class="arch-node-icon">☰</div>
+            <span>REPORTS<br>OUTPUT</span>
+          </div>
+        </div>
+
+        <div class="arch-viz">
+          <div class="arch-viz-housing">
+            <img src="images/EXAMPLEFOLD_PDB_7BBV.png" alt="Protein structure illustration" loading="lazy" />
+            <div class="arch-viz-overlay">
+              <span>PDB: 7BBV</span>
+              <span class="status-led status-led--cyan"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== AI INTELLIGENCE CORE ========== -->
+    <section class="section module-section" id="ai-core">
+      <div class="container reveal">
+        <div class="module-label">AI INTELLIGENCE CORE — 06</div>
+        <h2>Neural processing for scientific discovery.</h2>
+
+        <div class="ai-grid">
+          <div class="ai-main-housing">
+            <div class="ai-processor-viz" aria-hidden="true">
+              <div class="proc-core">
+                <div class="proc-ring proc-ring--1"></div>
+                <div class="proc-ring proc-ring--2"></div>
+                <div class="proc-ring proc-ring--3"></div>
+                <div class="proc-center">AI</div>
+              </div>
+              <svg class="proc-traces" viewBox="0 0 300 300">
+                <circle cx="150" cy="150" r="110" fill="none" stroke="var(--led-cyan)" stroke-width="0.5" opacity="0.2" />
+                <circle cx="150" cy="150" r="90" fill="none" stroke="var(--led-cyan)" stroke-width="0.5" opacity="0.3" />
+                <circle cx="150" cy="150" r="70" fill="none" stroke="var(--led-cyan)" stroke-width="0.5" opacity="0.4" />
+                <line x1="40" y1="60" x2="110" y2="80" stroke="var(--led-cyan)" stroke-width="1" opacity="0.5" />
+                <line x1="260" y1="40" x2="190" y2="70" stroke="var(--led-cyan)" stroke-width="1" opacity="0.5" />
+                <line x1="30" y1="200" x2="80" y2="190" stroke="var(--led-cyan)" stroke-width="1" opacity="0.5" />
+                <line x1="270" y1="220" x2="200" y2="210" stroke="var(--led-cyan)" stroke-width="1" opacity="0.5" />
+                <line x1="60" y1="260" x2="90" y2="230" stroke="var(--led-cyan)" stroke-width="1" opacity="0.5" />
+                <line x1="240" y1="260" x2="200" y2="240" stroke="var(--led-cyan)" stroke-width="1" opacity="0.5" />
+                <circle cx="40" cy="60" r="3" fill="var(--led-cyan)" opacity="0.7" />
+                <circle cx="260" cy="40" r="3" fill="var(--led-cyan)" opacity="0.7" />
+                <circle cx="30" cy="200" r="3" fill="var(--led-cyan)" opacity="0.7" />
+                <circle cx="270" cy="220" r="3" fill="var(--led-cyan)" opacity="0.7" />
+                <circle cx="60" cy="260" r="3" fill="var(--led-cyan)" opacity="0.7" />
+                <circle cx="240" cy="260" r="3" fill="var(--led-cyan)" opacity="0.7" />
+              </svg>
+            </div>
+            <div class="ai-metrics">
+              <div class="ai-metric">
+                <span class="ai-metric-label">CONFIDENCE</span>
+                <div class="gauge-bar"><div class="gauge-fill" style="--gauge:94%"></div></div>
+                <span class="ai-metric-val">94.2%</span>
+              </div>
+              <div class="ai-metric">
+                <span class="ai-metric-label">INFERENCE</span>
+                <div class="gauge-bar"><div class="gauge-fill" style="--gauge:87%"></div></div>
+                <span class="ai-metric-val">87.0%</span>
+              </div>
+              <div class="ai-metric">
+                <span class="ai-metric-label">KNOWLEDGE GRAPH</span>
+                <div class="gauge-bar"><div class="gauge-fill" style="--gauge:76%"></div></div>
+                <span class="ai-metric-val">76.5%</span>
+              </div>
+            </div>
+            <div class="ai-labels">
+              <span>NEURAL ACTIVITY: <span class="text-cyan">ACTIVE</span></span>
+              <span>MODEL: <span class="text-cyan">GEN-OMICS-L</span></span>
+              <span>NODES: <span class="text-cyan">3.2M</span></span>
+            </div>
+          </div>
+
+          <div class="ai-info-panel">
+            <div class="module-label">AI CAPABILITIES</div>
+            <ul class="ai-cap-list">
+              <li><span class="status-led status-led--green"></span> Sequence annotation inference</li>
+              <li><span class="status-led status-led--green"></span> Context-aware interpretation</li>
+              <li><span class="status-led status-led--cyan"></span> Multi-database knowledge fusion</li>
+              <li><span class="status-led status-led--cyan"></span> Pathway enrichment analysis</li>
+              <li><span class="status-led status-led--amber"></span> Literature cross-referencing</li>
+              <li><span class="status-led status-led--amber"></span> Hypothesis generation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== DEVELOPMENT ROADMAP ========== -->
+    <section class="section module-section" id="roadmap">
+      <div class="container reveal">
+        <div class="module-label">DEVELOPMENT ROADMAP — 07</div>
+        <h2>Phased development toward intelligent research operations.</h2>
+
+        <div class="roadmap-rail">
+          <article class="phase-module">
+            <div class="phase-indicator">
+              <div class="phase-dot phase-dot--done"></div>
+              <div class="phase-line"></div>
+            </div>
+            <div class="phase-body">
+              <div class="module-head">
+                <span class="module-num">PHASE 1</span>
+                <div class="status-led status-led--green"></div>
+              </div>
+              <h3>Foundation</h3>
+              <p>Core sequence analysis workflows and foundational database integrations. BLAST, NCBI, UniProt connectivity established.</p>
+              <div class="phase-tags"><span>✓ COMPLETE</span></div>
+            </div>
+          </article>
+
+          <article class="phase-module">
+            <div class="phase-indicator">
+              <div class="phase-dot phase-dot--active"></div>
+              <div class="phase-line"></div>
+            </div>
+            <div class="phase-body">
+              <div class="module-head">
+                <span class="module-num">PHASE 2</span>
+                <div class="status-led status-led--amber pulse-led"></div>
+              </div>
+              <h3>Expansion</h3>
+              <p>Expanded annotation capabilities, advanced multi-view visualization, and publication-ready reporting engine.</p>
+              <div class="phase-tags"><span>⟳ IN PROGRESS</span></div>
+            </div>
+          </article>
+
+          <article class="phase-module">
+            <div class="phase-indicator">
+              <div class="phase-dot"></div>
+            </div>
+            <div class="phase-body">
+              <div class="module-head">
+                <span class="module-num">PHASE 3</span>
+                <div class="status-led status-led--off"></div>
+              </div>
+              <h3>Advanced Operations</h3>
+              <p>CRISPR design tools, synthetic biology workflows, voice AI interface, autonomous agents, and LIMS connectivity.</p>
+              <div class="phase-tags"><span>○ PLANNED</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== RESEARCH VISION ========== -->
+    <section class="section module-section" id="vision">
+      <div class="container narrow reveal">
+        <div class="module-label">RESEARCH VISION</div>
+        <h2>Accelerating science through intelligent workflow integration.</h2>
+        <p class="section-desc">
+          Geneode is being shaped as the public face of a serious scientific platform:
+          technically grounded, transparent by design, and built for researchers,
+          educators, labs, and biotechnology teams. Every product decision is aimed at
+          reducing repetitive computational work so scientists can focus on discovery.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========== COMMAND CENTER CTA ========== -->
+    <section class="section module-section" id="command">
+      <div class="container reveal">
+        <div class="command-panel">
+          <div class="command-panel-inner">
+            <div class="command-left">
+              <img class="command-logo" src="images/logo_black.png" alt="Geneode" />
+              <div class="module-label">COMMAND CENTER</div>
+              <h2>Interested in pilots, research partnerships, or early access?</h2>
+              <p>Join the next phase of AI-assisted bioinformatics development.</p>
+            </div>
+            <div class="command-right">
+              <a class="btn btn-primary btn-large" href="mailto:hello@geneode.com">
+                <span class="btn-icon">◈</span> CONTACT TEAM
+              </a>
+              <div class="command-status">
+                <div class="status-led status-led--green pulse-led"></div>
+                <span>COMMS: ONLINE</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER CONSOLE ========== -->
+  <footer class="footer-console">
+    <div class="container footer-wrap">
+      <div class="footer-left">
+        <img class="footer-logo" src="images/logo_black.png" alt="Geneode" />
+        <div>
+          <span class="footer-brand">GENEODE</span>
+          <p>© <span id="year"></span> Geneode. AI-assisted bioinformatics for scientific discovery.</p>
+        </div>
+      </div>
+      <div class="footer-right">
+        <div class="footer-status">
+          <div class="status-led status-led--green"></div>
+          <span>SYS NOMINAL</span>
+        </div>
+        <a href="#top" class="footer-top-link">▲ RETURN TO TOP</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
